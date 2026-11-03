@@ -1,0 +1,93 @@
+{
+  "checked_at": "2026-11-03T02:04:58.949452+00:00",
+  "base_commit": "62f9f3f785f889822ab4e78d65de9997d0b58441",
+  "scope": "Related local regressions; remote CI pending",
+  "results": {
+    "gpu_regression": {
+      "passed": 98,
+      "failed": 0,
+      "skipped": 0,
+      "deselected": 0,
+      "subtests_passed": 0
+    },
+    "cache_regression": {
+      "passed": 163,
+      "failed": 0,
+      "skipped": 0,
+      "deselected": 0,
+      "subtests_passed": 773
+    },
+    "env_regression": {
+      "passed": 21,
+      "failed": 0,
+      "skipped": 0,
+      "deselected": 0,
+      "subtests_passed": 2655
+    },
+    "rust_mamba_regression": {
+      "passed": 48,
+      "failed": 0,
+      "skipped": 0,
+      "deselected": 534,
+      "subtests_passed": 0
+    },
+    "kernel_cpu": {
+      "passed": 247,
+      "failed": 0,
+      "skipped": 1,
+      "deselected": 0,
+      "subtests_passed": 2
+    },
+    "sampling_clean_main": {
+      "passed": 2,
+      "failed": 3,
+      "skipped": 0,
+      "deselected": 0,
+      "subtests_passed": 0
+    },
+    "sampling_fused_isolated": {
+      "passed": 2,
+      "failed": 3,
+      "skipped": 0,
+      "deselected": 0,
+      "subtests_passed": 0
+    }
+  },
+  "service": {
+    "pairs": 24,
+    "same_output_ids": 24,
+    "same_cached_tokens": 24,
+    "model": "Qwen3.8-27B-NVFP4",
+    "tp": 2,
+    "base_head": "62f9f3f785f889822ab4e78d65de9997d0b58441"
+  },
+  "package_versions": {
+    "torch": "2.14.1+cu130",
+    "triton": "3.8.0",
+    "transformers": "5.19.0",
+    "compressed-tensors": "0.18.0",
+    "flashinfer-python": "0.7.2",
+    "humming-kernels": "0.1.18",
+    "sglang-kernel": "0.4.10",
+    "sgl-deep-gemm": "0.2.2",
+    "pytest": "9.1.1",
+    "pytest-asyncio": "1.4.1.post1"
+  },
+  "files": {
+    "python/sglang/kernels/ops/kvcache/__init__.py": "1c232d3ac8744cf74c481da3d33d5a1f7f36cb24a0c2f823006f5d26fbc09c7c",
+    "python/sglang/kernels/ops/kvcache/int8_mamba_checkpoint.py": "138e7b76923c0c6de43613d72847ac843eb1cfdb807bd376449fdb0a3b92aeb3",
+    "python/sglang/srt/environ.py": "6c9e97a49d393a246c7ef078adf40fa884370265b87d7f1f083ff2bc2acef4df",
+    "python/sglang/srt/mem_cache/mamba_checkpoint_pool.py": "fcd0cfb7a9811a05e8fa6f73007e4095ed55cbd21360680dc0130d5637ada7f7",
+    "test/registered/kernels/ops/kvcache/test_int8_mamba_checkpoint.py": "2f8d88579a85c3049db8135acf84788ce962df20445aaf130ab46ff35b61afd7",
+    "test/registered/kernels/ops/mamba/test_int8_checkpoint_commit.py": "2cf58de1af4eee4dfbbd42e5eb17f1ad80fe3e53724260d94895fb954c0122c4",
+    "test/registered/unit/kernels/test_kernels_namespace.py": "63650eb0fa756480db6db2685d4c2e53d5a344b12131fd4f033b340c58753b7b",
+    "test/registered/unit/mem_cache/test_fused_int8_fallback.py": "6f2760333a9fa076493ee31782f743a2a8122577a024d8fb083f49d2438ddf3b"
+  },
+  "patch_sha256": "7b87b08c30962db0b6418a6ef04ccf51c5f525ccf0ff5a4452cdecf9c8cf354b",
+  "applicable_precommit_passed": true,
+  "targeted_cpu_gpu_ci_runners_passed": true,
+  "independent_sampling_fix_included": false,
+  "sampling_note": "Full suite passes, but isolated class reproduces the same three failures on patched and clean main; order-dependent aggregate result is not evidence of a fix.",
+  "performance_snapshot": "baa9befa381511cd4d56f83980951e5a45fffc6d",
+  "performance_rerun_on_refreshed_main": false
+}
